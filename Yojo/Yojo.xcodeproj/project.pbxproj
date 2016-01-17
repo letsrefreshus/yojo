@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2083CAE1C4C344D0039A786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CAD1C4C344D0039A786 /* AppDelegate.swift */; };
+		E2083CB01C4C344D0039A786 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CAF1C4C344D0039A786 /* ViewController.swift */; };
+		E2083CB31C4C344D0039A786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2083CB11C4C344D0039A786 /* Main.storyboard */; };
+		E2083CB61C4C344D0039A786 /* Yojo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2083CB41C4C344D0039A786 /* Yojo.xcdatamodeld */; };
+		E2083CB81C4C344D0039A786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2083CB71C4C344D0039A786 /* Assets.xcassets */; };
+		E2083CBB1C4C344D0039A786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2083CB91C4C344D0039A786 /* LaunchScreen.storyboard */; };
+		E2083CC61C4C344D0039A786 /* YojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CC51C4C344D0039A786 /* YojoTests.swift */; };
+		E2083CD11C4C344D0039A786 /* YojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CD01C4C344D0039A786 /* YojoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2083CC21C4C344D0039A786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2083CA21C4C344D0039A786 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2083CA91C4C344D0039A786;
+			remoteInfo = Yojo;
+		};
+		E2083CCD1C4C344D0039A786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2083CA21C4C344D0039A786 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2083CA91C4C344D0039A786;
+			remoteInfo = Yojo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E2083CAA1C4C344D0039A786 /* Yojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2083CAD1C4C344D0039A786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2083CAF1C4C344D0039A786 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2083CB21C4C344D0039A786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2083CB51C4C344D0039A786 /* Yojo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yojo.xcdatamodel; sourceTree = "<group>"; };
+		E2083CB71C4C344D0039A786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2083CBA1C4C344D0039A786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E2083CBC1C4C344D0039A786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2083CC11C4C344D0039A786 /* YojoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YojoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2083CC51C4C344D0039A786 /* YojoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YojoTests.swift; sourceTree = "<group>"; };
+		E2083CC71C4C344D0039A786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2083CCC1C4C344D0039A786 /* YojoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YojoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2083CD01C4C344D0039A786 /* YojoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YojoUITests.swift; sourceTree = "<group>"; };
+		E2083CD21C4C344D0039A786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2083CA71C4C344D0039A786 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2083CBE1C4C344D0039A786 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2083CC91C4C344D0039A786 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2083CA11C4C344D0039A786 = {
+			isa = PBXGroup;
+			children = (
+				E2083CAC1C4C344D0039A786 /* Yojo */,
+				E2083CC41C4C344D0039A786 /* YojoTests */,
+				E2083CCF1C4C344D0039A786 /* YojoUITests */,
+				E2083CAB1C4C344D0039A786 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2083CAB1C4C344D0039A786 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2083CAA1C4C344D0039A786 /* Yojo.app */,
+				E2083CC11C4C344D0039A786 /* YojoTests.xctest */,
+				E2083CCC1C4C344D0039A786 /* YojoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2083CAC1C4C344D0039A786 /* Yojo */ = {
+			isa = PBXGroup;
+			children = (
+				E2083CAD1C4C344D0039A786 /* AppDelegate.swift */,
+				E2083CAF1C4C344D0039A786 /* ViewController.swift */,
+				E2083CB11C4C344D0039A786 /* Main.storyboard */,
+				E2083CB71C4C344D0039A786 /* Assets.xcassets */,
+				E2083CB91C4C344D0039A786 /* LaunchScreen.storyboard */,
+				E2083CBC1C4C344D0039A786 /* Info.plist */,
+				E2083CB41C4C344D0039A786 /* Yojo.xcdatamodeld */,
+			);
+			path = Yojo;
+			sourceTree = "<group>";
+		};
+		E2083CC41C4C344D0039A786 /* YojoTests */ = {
+			isa = PBXGroup;
+			children = (
+				E2083CC51C4C344D0039A786 /* YojoTests.swift */,
+				E2083CC71C4C344D0039A786 /* Info.plist */,
+			);
+			path = YojoTests;
+			sourceTree = "<group>";
+		};
+		E2083CCF1C4C344D0039A786 /* YojoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E2083CD01C4C344D0039A786 /* YojoUITests.swift */,
+				E2083CD21C4C344D0039A786 /* Info.plist */,
+			);
+			path = YojoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2083CA91C4C344D0039A786 /* Yojo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2083CD51C4C344D0039A786 /* Build configuration list for PBXNativeTarget "Yojo" */;
+			buildPhases = (
+				E2083CA61C4C344D0039A786 /* Sources */,
+				E2083CA71C4C344D0039A786 /* Frameworks */,
+				E2083CA81C4C344D0039A786 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Yojo;
+			productName = Yojo;
+			productReference = E2083CAA1C4C344D0039A786 /* Yojo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2083CC01C4C344D0039A786 /* YojoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2083CD81C4C344D0039A786 /* Build configuration list for PBXNativeTarget "YojoTests" */;
+			buildPhases = (
+				E2083CBD1C4C344D0039A786 /* Sources */,
+				E2083CBE1C4C344D0039A786 /* Frameworks */,
+				E2083CBF1C4C344D0039A786 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2083CC31C4C344D0039A786 /* PBXTargetDependency */,
+			);
+			name = YojoTests;
+			productName = YojoTests;
+			productReference = E2083CC11C4C344D0039A786 /* YojoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E2083CCB1C4C344D0039A786 /* YojoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2083CDB1C4C344D0039A786 /* Build configuration list for PBXNativeTarget "YojoUITests" */;
+			buildPhases = (
+				E2083CC81C4C344D0039A786 /* Sources */,
+				E2083CC91C4C344D0039A786 /* Frameworks */,
+				E2083CCA1C4C344D0039A786 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2083CCE1C4C344D0039A786 /* PBXTargetDependency */,
+			);
+			name = YojoUITests;
+			productName = YojoUITests;
+			productReference = E2083CCC1C4C344D0039A786 /* YojoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2083CA21C4C344D0039A786 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "OMFG Studios";
+				TargetAttributes = {
+					E2083CA91C4C344D0039A786 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					E2083CC01C4C344D0039A786 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = E2083CA91C4C344D0039A786;
+					};
+					E2083CCB1C4C344D0039A786 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = E2083CA91C4C344D0039A786;
+					};
+				};
+			};
+			buildConfigurationList = E2083CA51C4C344D0039A786 /* Build configuration list for PBXProject "Yojo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2083CA11C4C344D0039A786;
+			productRefGroup = E2083CAB1C4C344D0039A786 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2083CA91C4C344D0039A786 /* Yojo */,
+				E2083CC01C4C344D0039A786 /* YojoTests */,
+				E2083CCB1C4C344D0039A786 /* YojoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2083CA81C4C344D0039A786 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2083CBB1C4C344D0039A786 /* LaunchScreen.storyboard in Resources */,
+				E2083CB81C4C344D0039A786 /* Assets.xcassets in Resources */,
+				E2083CB31C4C344D0039A786 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2083CBF1C4C344D0039A786 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2083CCA1C4C344D0039A786 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2083CA61C4C344D0039A786 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2083CB01C4C344D0039A786 /* ViewController.swift in Sources */,
+				E2083CAE1C4C344D0039A786 /* AppDelegate.swift in Sources */,
+				E2083CB61C4C344D0039A786 /* Yojo.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2083CBD1C4C344D0039A786 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2083CC61C4C344D0039A786 /* YojoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2083CC81C4C344D0039A786 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2083CD11C4C344D0039A786 /* YojoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2083CC31C4C344D0039A786 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2083CA91C4C344D0039A786 /* Yojo */;
+			targetProxy = E2083CC21C4C344D0039A786 /* PBXContainerItemProxy */;
+		};
+		E2083CCE1C4C344D0039A786 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2083CA91C4C344D0039A786 /* Yojo */;
+			targetProxy = E2083CCD1C4C344D0039A786 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E2083CB11C4C344D0039A786 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2083CB21C4C344D0039A786 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2083CB91C4C344D0039A786 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2083CBA1C4C344D0039A786 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E2083CD31C4C344D0039A786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E2083CD41C4C344D0039A786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2083CD61C4C344D0039A786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Yojo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.omfg.yojo.Yojo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E2083CD71C4C344D0039A786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Yojo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.omfg.yojo.Yojo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E2083CD91C4C344D0039A786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YojoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.omfg.yojo.YojoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yojo.app/Yojo";
+			};
+			name = Debug;
+		};
+		E2083CDA1C4C344D0039A786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YojoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.omfg.yojo.YojoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yojo.app/Yojo";
+			};
+			name = Release;
+		};
+		E2083CDC1C4C344D0039A786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YojoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.omfg.yojo.YojoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Yojo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E2083CDD1C4C344D0039A786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YojoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.omfg.yojo.YojoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Yojo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2083CA51C4C344D0039A786 /* Build configuration list for PBXProject "Yojo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2083CD31C4C344D0039A786 /* Debug */,
+				E2083CD41C4C344D0039A786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2083CD51C4C344D0039A786 /* Build configuration list for PBXNativeTarget "Yojo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2083CD61C4C344D0039A786 /* Debug */,
+				E2083CD71C4C344D0039A786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E2083CD81C4C344D0039A786 /* Build configuration list for PBXNativeTarget "YojoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2083CD91C4C344D0039A786 /* Debug */,
+				E2083CDA1C4C344D0039A786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E2083CDB1C4C344D0039A786 /* Build configuration list for PBXNativeTarget "YojoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2083CDC1C4C344D0039A786 /* Debug */,
+				E2083CDD1C4C344D0039A786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2083CB41C4C344D0039A786 /* Yojo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2083CB51C4C344D0039A786 /* Yojo.xcdatamodel */,
+			);
+			currentVersion = E2083CB51C4C344D0039A786 /* Yojo.xcdatamodel */;
+			path = Yojo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E2083CA21C4C344D0039A786 /* Project object */;
+}
