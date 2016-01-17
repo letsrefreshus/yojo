@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		E2083CAE1C4C344D0039A786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CAD1C4C344D0039A786 /* AppDelegate.swift */; };
-		E2083CB01C4C344D0039A786 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CAF1C4C344D0039A786 /* ViewController.swift */; };
 		E2083CB31C4C344D0039A786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2083CB11C4C344D0039A786 /* Main.storyboard */; };
 		E2083CB61C4C344D0039A786 /* Yojo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2083CB41C4C344D0039A786 /* Yojo.xcdatamodeld */; };
 		E2083CB81C4C344D0039A786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2083CB71C4C344D0039A786 /* Assets.xcassets */; };
 		E2083CBB1C4C344D0039A786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2083CB91C4C344D0039A786 /* LaunchScreen.storyboard */; };
 		E2083CC61C4C344D0039A786 /* YojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CC51C4C344D0039A786 /* YojoTests.swift */; };
 		E2083CD11C4C344D0039A786 /* YojoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CD01C4C344D0039A786 /* YojoUITests.swift */; };
+		E2083CE21C4C3DCA0039A786 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CE11C4C3DCA0039A786 /* ListTableViewCell.swift */; };
+		E2083CE41C4C3E750039A786 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2083CE31C4C3E750039A786 /* ListTableViewCell.xib */; };
+		E2083CE61C4C480B0039A786 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CE51C4C480B0039A786 /* ListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,6 @@
 /* Begin PBXFileReference section */
 		E2083CAA1C4C344D0039A786 /* Yojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2083CAD1C4C344D0039A786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2083CAF1C4C344D0039A786 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2083CB21C4C344D0039A786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2083CB51C4C344D0039A786 /* Yojo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yojo.xcdatamodel; sourceTree = "<group>"; };
 		E2083CB71C4C344D0039A786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		E2083CCC1C4C344D0039A786 /* YojoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YojoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2083CD01C4C344D0039A786 /* YojoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YojoUITests.swift; sourceTree = "<group>"; };
 		E2083CD21C4C344D0039A786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2083CE11C4C3DCA0039A786 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		E2083CE31C4C3E750039A786 /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		E2083CE51C4C480B0039A786 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +103,9 @@
 		E2083CAC1C4C344D0039A786 /* Yojo */ = {
 			isa = PBXGroup;
 			children = (
+				E2083CDE1C4C3D800039A786 /* List */,
 				E2083CAD1C4C344D0039A786 /* AppDelegate.swift */,
-				E2083CAF1C4C344D0039A786 /* ViewController.swift */,
+				E2083CE51C4C480B0039A786 /* ListTableViewController.swift */,
 				E2083CB11C4C344D0039A786 /* Main.storyboard */,
 				E2083CB71C4C344D0039A786 /* Assets.xcassets */,
 				E2083CB91C4C344D0039A786 /* LaunchScreen.storyboard */,
@@ -126,6 +131,15 @@
 				E2083CD21C4C344D0039A786 /* Info.plist */,
 			);
 			path = YojoUITests;
+			sourceTree = "<group>";
+		};
+		E2083CDE1C4C3D800039A786 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E2083CE11C4C3DCA0039A786 /* ListTableViewCell.swift */,
+				E2083CE31C4C3E750039A786 /* ListTableViewCell.xib */,
+			);
+			name = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2083CBB1C4C344D0039A786 /* LaunchScreen.storyboard in Resources */,
+				E2083CE41C4C3E750039A786 /* ListTableViewCell.xib in Resources */,
 				E2083CB81C4C344D0039A786 /* Assets.xcassets in Resources */,
 				E2083CB31C4C344D0039A786 /* Main.storyboard in Resources */,
 			);
@@ -259,9 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2083CB01C4C344D0039A786 /* ViewController.swift in Sources */,
 				E2083CAE1C4C344D0039A786 /* AppDelegate.swift in Sources */,
 				E2083CB61C4C344D0039A786 /* Yojo.xcdatamodeld in Sources */,
+				E2083CE61C4C480B0039A786 /* ListTableViewController.swift in Sources */,
+				E2083CE21C4C3DCA0039A786 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
