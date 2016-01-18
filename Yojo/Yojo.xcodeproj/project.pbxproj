@@ -17,6 +17,7 @@
 		E2083CE21C4C3DCA0039A786 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CE11C4C3DCA0039A786 /* ListTableViewCell.swift */; };
 		E2083CE41C4C3E750039A786 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2083CE31C4C3E750039A786 /* ListTableViewCell.xib */; };
 		E2083CE61C4C480B0039A786 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CE51C4C480B0039A786 /* ListTableViewController.swift */; };
+		E2083CE81C4C5F0C0039A786 /* AddItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CE71C4C5F0C0039A786 /* AddItemProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E2083CE11C4C3DCA0039A786 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		E2083CE31C4C3E750039A786 /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		E2083CE51C4C480B0039A786 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		E2083CE71C4C5F0C0039A786 /* AddItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				E2083CE11C4C3DCA0039A786 /* ListTableViewCell.swift */,
 				E2083CE31C4C3E750039A786 /* ListTableViewCell.xib */,
+				E2083CE71C4C5F0C0039A786 /* AddItemProtocol.swift */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				E2083CAE1C4C344D0039A786 /* AppDelegate.swift in Sources */,
 				E2083CB61C4C344D0039A786 /* Yojo.xcdatamodeld in Sources */,
 				E2083CE61C4C480B0039A786 /* ListTableViewController.swift in Sources */,
+				E2083CE81C4C5F0C0039A786 /* AddItemProtocol.swift in Sources */,
 				E2083CE21C4C3DCA0039A786 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

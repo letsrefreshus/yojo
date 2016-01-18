@@ -8,24 +8,43 @@
 
 import UIKit
 
+enum ListItemCellState {
+    case inactiveState
+    case activeState
+}
+
 class ListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var itemSwitch: UISwitch!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var itemName: UITextField!
+    var delegate: AddItemProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addButton.hidden = true;
-        self.itemName.enabled = false;
+        setCellState(ListItemCellState.inactiveState)
+    }
+    
+    func setCellState(state:ListItemCellState) {
+        if (state == ListItemCellState.inactiveState) {
+            itemSwitch.hidden = true;
+            addButton.hidden = false;
+        } else {
+            itemSwitch.hidden = false;
+            addButton.hidden = true;
+        }
     }
     
     @IBAction func onAddButtonPress(sender: UIButton) {
-        self.itemName.enabled = true;
+        if(itemName.text != "") {
+            if let delegate = self.delegate {
+                delegate.controller(self, didAddItem: itemName.text!)
+            }
+        }
     }
     
     @IBAction func onItemSwitchPressed(sender: UISwitch, forEvent event: UIEvent) {
+        
     }
 
-    
 }

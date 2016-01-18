@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ListTableViewController: UITableViewController {
+class ListTableViewController: UITableViewController, AddItemProtocol {
     
     var listItems = [String]();
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleItems()
+//        loadSampleItems()
+        loadAddItemCell()
         tableView.registerNib(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "listCell")
 
         // Uncomment the following line to preserve selection between presentations
@@ -26,6 +27,10 @@ class ListTableViewController: UITableViewController {
 
     func loadSampleItems(){
         listItems += ["Eggs", "Milk", "Bread"];
+    }
+    
+    func loadAddItemCell(){
+        listItems.insert("", atIndex: listItems.count)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -41,9 +46,17 @@ class ListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> ListTableViewCell {
         let cellIdentifier = "listCell";
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ListTableViewCell;
-        cell.itemName.text = listItems[indexPath.row];
+        cell.delegate = self
+        let itemName = listItems[indexPath.row];
+        cell.itemName.text = itemName;
+        cell.setCellState(itemName == "" ? ListItemCellState.inactiveState : ListItemCellState.activeState);
     
         return cell;
+    }
+    
+    func controller(controller: ListTableViewCell, didAddItem: String) {
+        listItems.insert(didAddItem, atIndex: (listItems.count - 1));
+        tableView.reloadData()
     }
 
 
@@ -55,17 +68,16 @@ class ListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
+            listItems.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.
