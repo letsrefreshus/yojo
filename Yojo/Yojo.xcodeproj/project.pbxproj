@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E2083CAE1C4C344D0039A786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CAD1C4C344D0039A786 /* AppDelegate.swift */; };
 		E2083CB31C4C344D0039A786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2083CB11C4C344D0039A786 /* Main.storyboard */; };
-		E2083CB61C4C344D0039A786 /* Yojo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2083CB41C4C344D0039A786 /* Yojo.xcdatamodeld */; };
 		E2083CB81C4C344D0039A786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2083CB71C4C344D0039A786 /* Assets.xcassets */; };
 		E2083CBB1C4C344D0039A786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2083CB91C4C344D0039A786 /* LaunchScreen.storyboard */; };
 		E2083CC61C4C344D0039A786 /* YojoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CC51C4C344D0039A786 /* YojoTests.swift */; };
@@ -18,6 +17,7 @@
 		E2083CE41C4C3E750039A786 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2083CE31C4C3E750039A786 /* ListTableViewCell.xib */; };
 		E2083CE61C4C480B0039A786 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CE51C4C480B0039A786 /* ListTableViewController.swift */; };
 		E2083CE81C4C5F0C0039A786 /* AddItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2083CE71C4C5F0C0039A786 /* AddItemProtocol.swift */; };
+		E2083CEB1C4C9FD30039A786 /* GroceryList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2083CE91C4C9FD30039A786 /* GroceryList.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 		E2083CAA1C4C344D0039A786 /* Yojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2083CAD1C4C344D0039A786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2083CB21C4C344D0039A786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E2083CB51C4C344D0039A786 /* Yojo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yojo.xcdatamodel; sourceTree = "<group>"; };
 		E2083CB71C4C344D0039A786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2083CBA1C4C344D0039A786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2083CBC1C4C344D0039A786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		E2083CE31C4C3E750039A786 /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		E2083CE51C4C480B0039A786 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		E2083CE71C4C5F0C0039A786 /* AddItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemProtocol.swift; sourceTree = "<group>"; };
+		E2083CEA1C4C9FD30039A786 /* GroceryList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryList.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 				E2083CB71C4C344D0039A786 /* Assets.xcassets */,
 				E2083CB91C4C344D0039A786 /* LaunchScreen.storyboard */,
 				E2083CBC1C4C344D0039A786 /* Info.plist */,
-				E2083CB41C4C344D0039A786 /* Yojo.xcdatamodeld */,
+				E2083CE91C4C9FD30039A786 /* GroceryList.xcdatamodeld */,
 			);
 			path = Yojo;
 			sourceTree = "<group>";
@@ -278,8 +278,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2083CAE1C4C344D0039A786 /* AppDelegate.swift in Sources */,
-				E2083CB61C4C344D0039A786 /* Yojo.xcdatamodeld in Sources */,
 				E2083CE61C4C480B0039A786 /* ListTableViewController.swift in Sources */,
+				E2083CEB1C4C9FD30039A786 /* GroceryList.xcdatamodeld in Sources */,
 				E2083CE81C4C5F0C0039A786 /* AddItemProtocol.swift in Sources */,
 				E2083CE21C4C3DCA0039A786 /* ListTableViewCell.swift in Sources */,
 			);
@@ -528,13 +528,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E2083CB41C4C344D0039A786 /* Yojo.xcdatamodeld */ = {
+		E2083CE91C4C9FD30039A786 /* GroceryList.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E2083CB51C4C344D0039A786 /* Yojo.xcdatamodel */,
+				E2083CEA1C4C9FD30039A786 /* GroceryList.xcdatamodel */,
 			);
-			currentVersion = E2083CB51C4C344D0039A786 /* Yojo.xcdatamodel */;
-			path = Yojo.xcdatamodeld;
+			currentVersion = E2083CEA1C4C9FD30039A786 /* GroceryList.xcdatamodel */;
+			path = GroceryList.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

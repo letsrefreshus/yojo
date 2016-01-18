@@ -7,30 +7,41 @@
 //
 
 import UIKit
+import CoreData
 
 class ListTableViewController: UITableViewController, AddItemProtocol {
     
-    var listItems = [String]();
+    var listItems = [String]()
+    var persistentListItems = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        loadSampleItems()
-        loadAddItemCell()
+        loadSampleItems()
+        insertAddItemCell()
+        initView()
         tableView.registerNib(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "listCell")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    func initView() {
+        navigationItem.rightBarButtonItem = editButtonItem();
+    }
+    
     func loadSampleItems(){
         listItems += ["Eggs", "Milk", "Bread"];
     }
     
-    func loadAddItemCell(){
+    func insertAddItemCell() {
         listItems.insert("", atIndex: listItems.count)
+    }
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+//        if(editing) {
+//            listItems.removeLast()
+//        } else {
+//            insertAddItemCell()
+//        }
+//        tableView.reloadData()
+        super.setEditing(editing, animated: animated)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -60,48 +71,43 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
     }
 
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        let itemName = listItems[indexPath.row];
+        return itemName == "" ? false : true;
     }
-    */
-
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             listItems.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
+    
+//    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+//        return UITableViewCellEditingStyle.None
+//    }
+//    
+//    override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        return false;
+//    }
 
-    /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+        let itemToMove = listItems[fromIndexPath.row]
+        listItems.removeAtIndex(fromIndexPath.row)
+        listItems.insert(itemToMove, atIndex: toIndexPath.row)
     }
-    */
 
-    /*
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
-        return true
+        let itemName = listItems[indexPath.row];
+        return itemName == "" ? false : true;
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    // MARK: - CORE DATA
 
 }

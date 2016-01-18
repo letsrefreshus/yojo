@@ -22,16 +22,17 @@ class ListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        itemName.borderStyle = .None
         setCellState(ListItemCellState.inactiveState)
     }
     
     func setCellState(state:ListItemCellState) {
         if (state == ListItemCellState.inactiveState) {
-            itemSwitch.hidden = true;
-            addButton.hidden = false;
+            itemSwitch.hidden = true
+            addButton.hidden = false
         } else {
-            itemSwitch.hidden = false;
-            addButton.hidden = true;
+            itemSwitch.hidden = false
+            addButton.hidden = true
         }
     }
     
