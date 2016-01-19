@@ -13,17 +13,21 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
     
     var listItems = [String]()
     var persistentListItems = [NSManagedObject]()
+    var filePath = NSString()
     
+    // MARK: - INIT
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleItems()
-        insertAddItemCell()
         initView()
+//        loadSampleItems()
+        readFromFile()
+        insertAddItemCell()
         tableView.registerNib(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "listCell")
     }
 
     func initView() {
         navigationItem.rightBarButtonItem = editButtonItem();
+        filePath = NSTemporaryDirectory() + "list.txt"
     }
     
     func loadSampleItems(){
@@ -33,24 +37,13 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
     func insertAddItemCell() {
         listItems.insert("", atIndex: listItems.count)
     }
-    
-    override func setEditing(editing: Bool, animated: Bool) {
-//        if(editing) {
-//            listItems.removeLast()
-//        } else {
-//            insertAddItemCell()
-//        }
-//        tableView.reloadData()
-        super.setEditing(editing, animated: animated)
-    }
-    
+
+    // MARK: - TABLE VIEW
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return listItems.count;
     }
 
@@ -61,19 +54,17 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
         let itemName = listItems[indexPath.row];
         cell.itemName.text = itemName;
         cell.setCellState(itemName == "" ? ListItemCellState.inactiveState : ListItemCellState.activeState);
-    
         return cell;
     }
     
     func controller(controller: ListTableViewCell, didAddItem: String) {
         listItems.insert(didAddItem, atIndex: (listItems.count - 1));
+        saveToFile();
         tableView.reloadData()
     }
 
-
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         let itemName = listItems[indexPath.row];
         return itemName == "" ? false : true;
     }
@@ -83,16 +74,9 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
         if editingStyle == .Delete {
             listItems.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            saveToFile()
         }
     }
-    
-//    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-//        return UITableViewCellEditingStyle.None
-//    }
-//    
-//    override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return false;
-//    }
 
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
@@ -103,11 +87,43 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
 
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
         let itemName = listItems[indexPath.row];
         return itemName == "" ? false : true;
     }
     
-    // MARK: - CORE DATA
+    // MARK: - FILE READ/WRITE
+    func saveToFile() {
+        do {
+            let data = try NSJSONSerialization.dataWithJSONObject(listItems, options:.PrettyPrinted)
+            let string = NSString(data: data, encoding: NSUTF8StringEncoding)
+            do {
+                try string!.writeToFile(filePath as String, atomically: true, encoding: NSUTF8StringEncoding)
+            } catch {
+                NSLog("Writing to the file failed")
+            }
+        } catch {
+            NSLog("Serialization to JSON failed")
+        }
+    }
+    
+    func readFromFile() {
+        do {
+            let readFile:NSString? = try NSString(contentsOfFile: filePath as String, encoding: NSUTF8StringEncoding)
+            let data: NSData = readFile!.dataUsingEncoding(NSUTF8StringEncoding)!
+            do {
+                let anyObj: AnyObject? = try NSJSONSerialization.JSONObjectWithData(data, options:.MutableLeaves)
+                for item in anyObj as! Array<AnyObject> {
+                    let itemName = item as! String
+                    if  itemName != "" {
+                        listItems.append(itemName);
+                    }
+                }
+            } catch {
+                NSLog("Serialization to String failed on reading")
+            }
+        }catch {
+            NSLog("Reading from the file failed")
+        }
+    }
 
 }
