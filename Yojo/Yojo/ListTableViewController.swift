@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Alamofire
 
 class ListTableViewController: UITableViewController, AddItemProtocol {
     
@@ -18,6 +19,7 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
     // MARK: - INIT
     override func viewDidLoad() {
         super.viewDidLoad()
+        getDataFromServer()
         initView()
 //        loadSampleItems()
         readFromFile()
@@ -28,7 +30,17 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
     func initView() {
         navigationItem.rightBarButtonItem = editButtonItem();
         filePath = NSTemporaryDirectory() + "list.txt"
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl!)
     }
+    
+    func refresh(sender:AnyObject)
+    {
+        getDataFromServer()
+    }
+    
     
     func loadSampleItems(){
         listItems += ["Eggs", "Milk", "Bread"];
@@ -36,6 +48,27 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
     
     func insertAddItemCell() {
         listItems.insert("", atIndex: listItems.count)
+    }
+    
+    func getDataFromServer() {
+        Alamofire.request(.GET, "http://10.0.0.191").responseJSON() {
+            response in
+            do {
+                let anyObj: AnyObject? = try NSJSONSerialization.JSONObjectWithData(response.data!, options:.MutableContainers)
+                self.listItems.removeAll()
+                for item in anyObj as! Array<AnyObject> {
+                    for (_, itemName) in item as! NSMutableDictionary {
+                            self.listItems.append(itemName as! String)
+                    }
+                }
+                self.insertAddItemCell()
+                self.saveToFile()
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            } catch {
+                NSLog("Serialization to String failed on reading")
+            }
+        }
     }
 
     // MARK: - TABLE VIEW
