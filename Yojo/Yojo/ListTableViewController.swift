@@ -12,18 +12,19 @@ import Alamofire
 
 class ListTableViewController: UITableViewController, AddItemProtocol {
     
-    var listItems = [String]()
+    var listItems = [ListItem]()
     var persistentListItems = [NSManagedObject]()
     var filePath = NSString()
+    let serverCommunicator = ServerCommunication()
     
     // MARK: - INIT
     override func viewDidLoad() {
         super.viewDidLoad()
-        getDataFromServer()
         initView()
 //        loadSampleItems()
         readFromFile()
         insertAddItemCell()
+        getDataFromServer()
         tableView.registerNib(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "listCell")
     }
 
@@ -31,9 +32,8 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
         navigationItem.rightBarButtonItem = editButtonItem();
         filePath = NSTemporaryDirectory() + "list.txt"
         self.refreshControl = UIRefreshControl()
-        self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(refreshControl!)
+        self.tableView.addSubview(self.refreshControl!)
     }
     
     func refresh(sender:AnyObject)
@@ -43,22 +43,22 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
     
     
     func loadSampleItems(){
-        listItems += ["Eggs", "Milk", "Bread"];
+        listItems += [ListItem(name: "Eggs"), ListItem(name: "Milk"), ListItem(name: "Bread")];
     }
     
     func insertAddItemCell() {
-        listItems.insert("", atIndex: listItems.count)
+        listItems.insert(ListItem(name: ""), atIndex: listItems.count)
     }
     
     func getDataFromServer() {
-        Alamofire.request(.GET, "http://10.0.0.191").responseJSON() {
-            response in
+        serverCommunicator.getDataFromServer({
+            (responseData:NSData) -> Void in
             do {
-                let anyObj: AnyObject? = try NSJSONSerialization.JSONObjectWithData(response.data!, options:.MutableContainers)
+                let anyObj: AnyObject? = try NSJSONSerialization.JSONObjectWithData(responseData, options:.MutableContainers)
                 self.listItems.removeAll()
                 for item in anyObj as! Array<AnyObject> {
                     for (_, itemName) in item as! NSMutableDictionary {
-                            self.listItems.append(itemName as! String)
+                            self.listItems.append(ListItem(name: itemName as! String))
                     }
                 }
                 self.insertAddItemCell()
@@ -67,8 +67,9 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
                 self.refreshControl?.endRefreshing()
             } catch {
                 NSLog("Serialization to String failed on reading")
+                self.refreshControl?.endRefreshing()
             }
-        }
+        })
     }
 
     // MARK: - TABLE VIEW
@@ -84,16 +85,10 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
         let cellIdentifier = "listCell";
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ListTableViewCell;
         cell.delegate = self
-        let itemName = listItems[indexPath.row];
-        cell.itemName.text = itemName;
-        cell.setCellState(itemName == "" ? ListItemCellState.inactiveState : ListItemCellState.activeState);
+        let item = listItems[indexPath.row];
+        cell.itemName.text = item.itemName;
+        cell.setCellState(item.itemName == "" ? ListItemCellState.inactiveState : ListItemCellState.activeState);
         return cell;
-    }
-    
-    func controller(controller: ListTableViewCell, didAddItem: String) {
-        listItems.insert(didAddItem, atIndex: (listItems.count - 1));
-        saveToFile();
-        tableView.reloadData()
     }
 
     // Override to support conditional editing of the table view.
@@ -124,10 +119,23 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
         return itemName == "" ? false : true;
     }
     
-    // MARK: - FILE READ/WRITE
+    // MARK:-DELEGATE FOR HANDLING ADDED ITEM
+    func addItemController(controller: ListTableViewCell, didAddItem: String) {
+        listItems.insert(ListItem(name:didAddItem), atIndex: (listItems.count - 1));
+        saveToFile();
+        tableView.reloadData()
+    }
+    
+    // MARK: - FILE READ/WRITE TEMP
     func saveToFile() {
         do {
-            let data = try NSJSONSerialization.dataWithJSONObject(listItems, options:.PrettyPrinted)
+            var listItemNames = [String]()
+            for item:ListItem in listItems{
+                if (item.itemName != "") {
+                    listItemNames.append(item.itemName)
+                }
+            }
+            let data = try NSJSONSerialization.dataWithJSONObject(listItemNames, options:.PrettyPrinted)
             let string = NSString(data: data, encoding: NSUTF8StringEncoding)
             do {
                 try string!.writeToFile(filePath as String, atomically: true, encoding: NSUTF8StringEncoding)
@@ -148,7 +156,7 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
                 for item in anyObj as! Array<AnyObject> {
                     let itemName = item as! String
                     if  itemName != "" {
-                        listItems.append(itemName);
+                        listItems.append(ListItem(name: itemName));
                     }
                 }
             } catch {

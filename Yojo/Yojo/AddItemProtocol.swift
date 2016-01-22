@@ -9,5 +9,5 @@
 import UIKit
 
 protocol AddItemProtocol {
-    func controller(controller: ListTableViewCell, didAddItem: String)
+    func addItemController(controller: ListTableViewCell, didAddItem: String)
 }

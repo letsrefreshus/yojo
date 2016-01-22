@@ -39,7 +39,7 @@ class ListTableViewCell: UITableViewCell {
     @IBAction func onAddButtonPress(sender: UIButton) {
         if(itemName.text != "") {
             if let delegate = self.delegate {
-                delegate.controller(self, didAddItem: itemName.text!)
+                delegate.addItemController(self, didAddItem: itemName.text!)
             }
         }
     }

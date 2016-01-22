@@ -20,6 +20,8 @@
 		E2083CEB1C4C9FD30039A786 /* GroceryList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2083CE91C4C9FD30039A786 /* GroceryList.xcdatamodeld */; };
 		E20BB4011C4DCBD300E0EE77 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20BB3EC1C4DCAAF00E0EE77 /* Alamofire.framework */; };
 		E20BB4021C4DCBD300E0EE77 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E20BB3EC1C4DCAAF00E0EE77 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E22C980E1C5174EB00172DBE /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C980D1C5174EB00172DBE /* ListItem.swift */; };
+		E22C98101C517DD800172DBE /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C980F1C517DD800172DBE /* ServerCommunication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		E2083CE71C4C5F0C0039A786 /* AddItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemProtocol.swift; sourceTree = "<group>"; };
 		E2083CEA1C4C9FD30039A786 /* GroceryList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryList.xcdatamodel; sourceTree = "<group>"; };
 		E20BB3E11C4DCAAF00E0EE77 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		E22C980D1C5174EB00172DBE /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		E22C980F1C517DD800172DBE /* ServerCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCommunication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,8 @@
 		E2083CAC1C4C344D0039A786 /* Yojo */ = {
 			isa = PBXGroup;
 			children = (
+				E22C980C1C5174C800172DBE /* Item */,
+				E22C98051C5174B300172DBE /* Networking */,
 				E2083CDE1C4C3D800039A786 /* List */,
 				E2083CAD1C4C344D0039A786 /* AppDelegate.swift */,
 				E2083CE51C4C480B0039A786 /* ListTableViewController.swift */,
@@ -240,6 +246,22 @@
 				E20BB3F81C4DCAAF00E0EE77 /* Alamofire.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E22C98051C5174B300172DBE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E22C980F1C517DD800172DBE /* ServerCommunication.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		E22C980C1C5174C800172DBE /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				E22C980D1C5174EB00172DBE /* ListItem.swift */,
+			);
+			name = Item;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +456,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E22C980E1C5174EB00172DBE /* ListItem.swift in Sources */,
+				E22C98101C517DD800172DBE /* ServerCommunication.swift in Sources */,
 				E2083CAE1C4C344D0039A786 /* AppDelegate.swift in Sources */,
 				E2083CE61C4C480B0039A786 /* ListTableViewController.swift in Sources */,
 				E2083CEB1C4C9FD30039A786 /* GroceryList.xcdatamodeld in Sources */,
