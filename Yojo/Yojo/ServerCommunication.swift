@@ -12,7 +12,7 @@ import Alamofire
 
 class ServerCommunication: NSObject {
     
-    let serverURL = "http://10.0.0.191"
+    let serverURL = "http://evident-relic-120823.appspot.com/"
     
     func getDataFromServer(completion:(responseData:NSData)->Void) {
         Alamofire.request(.GET, serverURL).responseJSON() {

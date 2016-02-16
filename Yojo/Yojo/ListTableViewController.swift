@@ -57,8 +57,10 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
                 let anyObj: AnyObject? = try NSJSONSerialization.JSONObjectWithData(responseData, options:.MutableContainers)
                 self.listItems.removeAll()
                 for item in anyObj as! Array<AnyObject> {
-                    for (_, itemName) in item as! NSMutableDictionary {
+                    for (itemType, itemName) in item as! NSMutableDictionary {
+                        if(itemType as! String != "id") {
                             self.listItems.append(ListItem(name: itemName as! String))
+                        }
                     }
                 }
                 self.insertAddItemCell()
@@ -133,6 +135,8 @@ class ListTableViewController: UITableViewController, AddItemProtocol {
             for item:ListItem in listItems{
                 if (item.itemName != "") {
                     listItemNames.append(item.itemName)
+                } else {
+                    //Create object
                 }
             }
             let data = try NSJSONSerialization.dataWithJSONObject(listItemNames, options:.PrettyPrinted)
